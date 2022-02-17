@@ -1,0 +1,101 @@
+main {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container {
+  width: 700px;
+}
+
+.finish {
+  border: none;
+  padding: 0.5rem 1rem;
+  background-color: #a8d862;
+  color: white;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+.bar {
+  box-sizing: content-box;
+  height: 1.5rem;
+  position: relative;
+  margin: 2rem 0;
+  background: #ebebeb;
+  border-radius: 25px;
+}
+
+.bar > span {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 0.5rem;
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+  font-family: sans-serif;
+  height: 100%;
+  border-radius: 20px;
+  background-color: #a8d862;
+  background-image: linear-gradient(
+    transparent,
+    rgba(0, 0, 0, 0.2)
+  );
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
+}
+
+.bar > span:after,
+.animate > span > span {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+  z-index: 1;
+  background-size: 10px 10px;
+  animation: move 2s linear infinite;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  overflow: hidden;
+}
+
+.red > span {
+  background-color: #fe8476;
+}
+.blue > span {
+  background-color: #79c2ed;
+}
+.white > span {
+  background-color: #fff;
+}
+.orange > span {
+  background-color: #fed568;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
